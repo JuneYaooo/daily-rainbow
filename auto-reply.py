@@ -9,7 +9,6 @@ import schedule
 from modules.weather import MoJiWeather
 from modules.robot import TulinRobot
 from modules.sentence import Sentence
-from modules.news import News
 from modules.database import MySQL
 from modules.music import CloudMusic
 from modules.picture import DreamDiffusion, ERNIEViLG
@@ -50,10 +49,9 @@ def hide_menu():
     2.天气查询，如发送 天气查询 北京
     3.听听音乐，如发送 音乐 人间
     4.试试AI绘画？只是可能要有点耐心~如发送 绘画 一朵紫色的花
-    5.看看新闻，如发送 新闻|热搜|微博|头条
-    6.可以有一搭没一搭闲聊，如发送 包含闲聊|聊天|机器人等关键词；不想聊了就说再见~
-    7.隐含词触发夸夸文学/毒鸡汤/土味情话/笑话等等...等你来撩~
-    8.其他请期待..
+    5.可以有一搭没一搭闲聊，如发送 包含闲聊|聊天|机器人等关键词；不想聊了就说再见~
+    6.隐含词触发夸夸文学/毒鸡汤/土味情话/笑话等等...等你来撩~
+    7.其他请期待..
     PS: 如有任何建议，请留言（关键词：建议|推荐|安利|留言+你的建议）
     """
     return menu
@@ -88,13 +86,6 @@ def message_handler():
 
     return message
 
-def news_handler(msg):
-    news = News()
-    if len(re.findall(r'微博|weibo|热搜|新闻',msg))>0:
-        send_text = '当前微博热搜\n' + news.crawl_weibo_hot_rank()
-    elif len(re.findall(r'头条|toutiao',msg))>0:
-        send_text = '当前今日热搜\n' + news.crawl_toutiao_hot_rank()
-    return send_text
 
 
 ## 存储建议和反馈
@@ -221,9 +212,6 @@ def on_recv_text_msg(wechat_instance: ntchat.WeChat, message):
         # 音乐查询
         elif len(re.findall(r'音乐|歌',msg))>0:
             send_text = music_handler(msg)
-        # 关键词触发新闻|热搜查询
-        elif len(re.findall(r'微博|weibo|热搜|新闻|头条',msg))>0:
-            send_text = news_handler(msg)
         # 关键词触发土味情话
         elif len(re.findall(r'宝贝|honey|亲爱的|爱你|情话',msg))>0:
             send_text = sentence.getEarthyLove()
