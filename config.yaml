@@ -1,0 +1,55 @@
+
+# white name list and nickname that you want to call
+white_dict:
+    wxid_xxxxxxxxxxxxxx: June
+    wxid_xxxxxxxxxxxxxy: June2
+
+# flag switch
+auto_reply_flag: true # 默认自动回复是开启状态
+robot_reply_flag: false # 默认聊天机器人回复是关闭状态
+
+# Tulin robot http://www.turingapi.com/
+tulin_robot:
+    apiKey: d502650dd8ae448fb652f6ff3fe1747b
+
+# db config 自己配置，配置成功自动生效，否则不使用数据库
+db_connection:
+    host: xx
+    port: 3306
+    user: root
+    passwd: xx
+    db: rainbowday
+
+default_music_list:
+    - 红马
+    - 落日微风
+    - 嘻哈帝国
+    - 你是人间四月天
+    - 棕旨
+    - 好几年
+    - 不仅仅是喜欢
+    - 她的眼睛会唱歌
+    - 四季予你
+    - 卧龙
+    - 我的新衣
+    - 有点甜
+    - 喜欢
+    - 目及皆是你
+    - 给你给我
+    - 别想他
+
+# ernie-vilg https://wenxin.baidu.com/ernie-vilg
+ai_art:
+    ernie_vilg:
+        ak: fLiuueWmKeqEfFn7rMQp9qsLrR1h1QwM
+        sk: sIIS1x1iXamnsuH331lk0oewWltSin14
+
+
+# Joke https://www.mxnzp.com/doc/detail?id=5
+joke_station:
+    flag: true
+    app_id: eeenhqpqnjdjrs3z
+    app_secret: enI2OElQKzJ0NWRDZHNTdVhuMGhxdz09
+
+weather:
+    default_city: 杭州
