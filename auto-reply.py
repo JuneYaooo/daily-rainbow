@@ -225,7 +225,7 @@ def on_recv_text_msg(wechat_instance: ntchat.WeChat, message):
         elif '鸡汤' in msg:
             send_text = sentence.getSoup()
         # 关键词触发本品说明书
-        elif len(re.findall(r'这是什么|菜单|这是啥|本人吗|说明书|操作说明|使用说明|用法|怎么用|menu|姐姐', msg, re.IGNORECASE)) > 0:
+        elif len(re.findall(r'这是什么|菜单|这是啥|本人吗|说明书|操作说明|使用说明|用法|怎么用|menu', msg, re.IGNORECASE)) > 0:
             send_text = hide_menu()
         # 关键词触发随机回复
         elif len(re.findall(r'随便|说点|无聊|累|唉|哎|说话', msg)) > 0:
