@@ -67,7 +67,7 @@ wechat.open(smart=True)
 def send_morning_job():
     if not wechat.login_status:
         return
-    wechat.send_text(to_wxid="wxid_3bl22ci7j97v22", content=morning(white_dict["wxid_3bl22ci7j97v22"]))
+    wechat.send_text(to_wxid="wxid_3bl22ci7j97v22", content=morning(white_dict["wxid_xxxxx"]))
 
 # 每天8:01 am执行
 schedule.every().day.at("08:01").do(send_morning_job)
@@ -82,17 +82,17 @@ def send_afternoon_music(to_wxid):
 # 随机发送音乐
 music_time = f"{random.randint(12,18)}:{random.randint(10,59)}:{random.randint(10,59)}"
 print('music_time',music_time)
-schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_ri2j0jsamq3l21')
+schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_xxxxx')
 
 # 随机发送音乐
 music_time = f"{random.randint(13,18)}:{random.randint(10,59)}:{random.randint(10,59)}"
 print('music_time',music_time)
-schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_9285392854212')
+schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_xxxxx')
 
 # 随机发送音乐
 music_time = f"{random.randint(14,17)}:{random.randint(10,59)}:{random.randint(10,59)}"
 print('music_time',music_time)
-schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_3bl22ci7j97v22')
+schedule.every().day.at(music_time).do(send_afternoon_music,'wxid_xxxxx')
 
 # 以下是为了让程序不结束，如果有用于PyQt等有主循环消息的框架，可以去除下面代码
 try:
